@@ -10,21 +10,21 @@
       case 'main-image': ?>
         <div class="bx-main-image-search-message">
           <span>
-            <strong class="bx-main-image-search-message-title""<?php echo $response->getSearchMessageTitleClass(); ?>"><?php echo $response->getSearchMessageTitle(); ?></strong>
+            <strong class="bx-main-image-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>"><?php echo $response->getSearchMessageTitle(); ?></strong>
           </span>
-          <span class="bx-main-image-search-message-main-image">
+          <span class="bx-main-image-search-message-main-image <?php echo $response->getSearchMessageMainImageCssClass();?>">
             <img src="<?php echo $response->getSearchMessageMainImage(); ?>"/>
           </span>
         </div>
       <?php break;
 
       case 'main-image-link':?>
-        <div class="bx-main-image-link-search-message""<?php echo $response->getSearchMessageLinkClass(); ?>">
-          <a href="<?php echo $response->getSearchMessageLink(); ?>" class="bx-main-image-link-search-message-link">
+        <div class="bx-main-image-link-search-message<?php echo $response->getSearchMessageLinkCssClass(); ?>">
+          <a href="<?php echo $response->getSearchMessageLink(); ?>" class="bx-main-image-link-search-message-link <?php echo $response->getSearchMessageMainLinkCssClass();?>">
             <span>
-              <strong class="bx-main-image-link-search-message-title""<?php echo $response->getSearchMessageTitleClass(); ?>">><?php echo $response->getSearchMessageTitle(); ?></strong>
+              <strong class="bx-main-image-link-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>">><?php echo $response->getSearchMessageTitle(); ?></strong>
             </span>
-            <span class="bx-main-image-link-search-message-main-image" "<?php echo $response->getSearchMessageMainImageClass();?>">
+            <span class="bx-main-image-link-search-message-main-image<?php echo $response->getSearchMessageMainImageCssClass();?>">
               <img src="<?php echo $response->getSearchMessageMainImage(); ?>"/>
             </span>
           </a>
@@ -34,15 +34,15 @@
       case 'side-image':?>
         <div class="bx-side-image-search-message">
           <div class="bx-side-image-search-message-container-left">
-            <p class="bx-side-image-search-message-title""<?php echo $response->getSearchMessageTitleClass(); ?>">>
+            <p class="bx-side-image-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>">>
               <?php echo $response->getSearchMessageTitle(); ?>
             </p>
-            <p class="info bx-side-image-search-message-description">
+            <p class="info bx-side-image-search-message-description <?php echo $response->getSearchMessageDescriptionCssClass();?>">
               <?php echo $response->getSearchMessageDescription(); ?>
             </p>
             </div>
             <div class="bx-side-image-search-message-container-right">
-              <div class="bx-side-image-search-message-side-image""<?php echo $response->getSearchMessageSideImageClass(); ?>">
+              <div class="bx-side-image-search-message-side-image<?php echo $response->getSearchMessageSideImageCssClass(); ?>">
                 <img src="<?php echo $response->getSearchMessageSideImage(); ?>"/>
               </div>
           </div>
@@ -52,17 +52,17 @@
       case 'side-image-link': ?>
         <div class="bx-side-image-link-search-message">
           <div class="bx-side-image-link-search-message-container-left">
-            <p class="bx-side-image-link-search-message-title""<?php echo $response->getSearchMessageTitleClass(); ?>">
+            <p class="bx-side-image-link-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>">
               <?php echo $response->getSearchMessageTitle(); ?>
             </p>
-          <a href="<?php echo $response->getSearchMessageLink(); ?>" class="bx-side-image-link-search-message-link"<?php echo $response->getSearchMessageLinkClass(); ?>">
-            <p class="info bx-ide-image-link-search-message-description">
+          <a href="<?php echo $response->getSearchMessageLink(); ?>" class="bx-side-image-link-search-message-link"<?php echo $response->getSearchMessageLinkCssClass(); ?>">
+            <p class="info bx-ide-image-link-search-message-description <?php $response->getSearchMessageDescriptionCssClass();?>">
                 <?php echo $response->getSearchMessageDescription(); ?>
             </p>
           </a>
           </div>
           <div class="bx-side-image-link-search-message-container-right">
-            <div class="bx-side-image-link-search-message-side-image""<?php echo $response->getSearchMessageSideImageClass(); ?>">
+            <div class="bx-side-image-link-search-message-side-image<?php echo $response->getSearchMessageSideImageCssClass(); ?>">
               <img src="<?php echo $response->getSearchMessageSideImage(); ?>"/>
             </div>
           </div>
@@ -71,10 +71,10 @@
 
       case 'no-image': ?>
         <div class="bx-no-image-search-message">
-          <p class="bx-no-image-search-message-title""<?php echo $response->getSearchMessageTitleClass(); ?>">
+          <p class="bx-no-image-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>">
             <?php echo $response->getSearchMessageTitle(); ?>
           </p>
-          <p class="info bx-no-image-search-message-description">
+          <p class="info bx-no-image-search-message-description <?php $response->getSearchMessageDescriptionCssClass();?>">
             <?php echo $response->getSearchMessageDescription(); ?>
           </p>
         </div>
@@ -82,11 +82,11 @@
 
       case 'no-image-link': ?>
         <div class="bx-no-image-link-search-message">
-          <p class="bx-no-image-link-search-message-title""<?php echo $response->getSearchMessageTitleClass(); ?>">
+          <p class="bx-no-image-link-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>">
             <?php echo $response->getSearchMessageTitle(); ?>
           </p>
-          <a href="<?php echo $response->getSearchMessageLink(); ?>" class="bx-no-image-link-search-message-link">
-            <p class="info bx-no-image-link-search-message-description">
+          <a href="<?php echo $response->getSearchMessageLink(); ?>" class="bx-no-image-link-search-message-link <?php echo $response->getSearchMessageLinkCssClass(); ?>">
+            <p class="info bx-no-image-link-search-message-description <?php $response->getSearchMessageDescriptionCssClass();?>">
               <?php echo $response->getSearchMessageDescription(); ?>
             </p>
           </a>
