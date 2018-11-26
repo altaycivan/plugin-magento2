@@ -1,30 +1,37 @@
 <?php
-  if ($this->isActive()) {
-    $response = $this->getResponse();
+/**
+ * Product view template
+ *
+ * @see \Boxalino\Intelligence\Block\SearchMessage
+ */
+?>
 
-    if (!empty($response->getSearchMessageTitle())) {
+<?php
+echo $this->test();
+  if ($this->isActive()) {
+    if (!empty($this->getSearchMessageTitle())) {
       echo "<style>.page-title-wrapper{display: none !important;}</style>"; //if there is a searchmessage, hide the page title
     }
 
-    switch ($response->getSearchMessageDisplayType()) {
+    switch ($this->getSearchMessageDisplayType()) {
       case 'main-image': ?>
         <div class="bx-main-image-search-message">
           <span>
-            <strong class="bx-main-image-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>"><?php echo $response->getSearchMessageTitle(); ?></strong>
+            <strong class="bx-main-image-search-message-title <?php echo $this->getSearchMessageTitleCssClass(); ?>"><?php echo $this->getSearchMessageTitle(); ?></strong>
           </span>
-          <span class="bx-main-image-search-message-main-image <?php echo $response->getSearchMessageMainImageCssClass();?>">
-            <img src="<?php echo $response->getSearchMessageMainImage(); ?>"/>
+          <span class="bx-main-image-search-message-main-image <?php echo $this->getSearchMessageMainImageCssClass();?>">
+            <img src="<?php echo $this->getSearchMessageMainImage(); ?>"/>
           </span>
         </div>
       <?php break;
 
       case 'main-image-link':?>
-        <div class="bx-main-image-link-search-message<?php echo $response->getSearchMessageLinkCssClass(); ?>">
-          <a href="<?php echo $response->getSearchMessageLink(); ?>" class="bx-main-image-link-search-message-link <?php echo $response->getSearchMessageMainLinkCssClass();?>">
+        <div class="bx-main-image-link-search-message <?php echo $response->getSearchMessageLinkCssClass(); ?>">
+          <a href="<?php echo $response->getSearchMessageLink();?>" class="bx-main-image-link-search-message-link <?php echo $response->getSearchMessageMainLinkCssClass();?>">
             <span>
-              <strong class="bx-main-image-link-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>">><?php echo $response->getSearchMessageTitle(); ?></strong>
+              <strong class="bx-main-image-link-search-message-title <?php echo $response->getSearchMessageTitleCssClass();?>"><?php echo $response->getSearchMessageTitle(); ?></strong>
             </span>
-            <span class="bx-main-image-link-search-message-main-image<?php echo $response->getSearchMessageMainImageCssClass();?>">
+            <span class="bx-main-image-link-search-message-main-image <?php echo $response->getSearchMessageMainImageCssClass();?>">
               <img src="<?php echo $response->getSearchMessageMainImage(); ?>"/>
             </span>
           </a>
@@ -34,7 +41,7 @@
       case 'side-image':?>
         <div class="bx-side-image-search-message">
           <div class="bx-side-image-search-message-container-left">
-            <p class="bx-side-image-search-message-title<?php echo $response->getSearchMessageTitleCssClass(); ?>">>
+            <p class="bx-side-image-search-message-title <?php echo $response->getSearchMessageTitleCssClass(); ?>">>
               <?php echo $response->getSearchMessageTitle(); ?>
             </p>
             <p class="info bx-side-image-search-message-description <?php echo $response->getSearchMessageDescriptionCssClass();?>">

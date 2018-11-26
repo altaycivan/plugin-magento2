@@ -611,6 +611,7 @@ class BxChooseResponse
     }
 
     public function getExtraInfoLocalizedValue($extraInfoKey, $language=null, $defaultExtraInfoValue = null, $prettyPrint=false, $choice=null, $considerRelaxation=true, $count=0, $maxDistance=10, $discardIfSubPhrases = true) {
+        Mage:log($extraInfoKey);
         $jsonLabel = $this->getExtraInfo($extraInfoKey, $defaultExtraInfoValue, $choice, $considerRelaxation, $count, $maxDistance, $discardIfSubPhrases, $defaultValue=NULL);
         if($jsonLabel == null) {
             return $this->prettyPrintLabel($defaultValue, $prettyPrint);
@@ -648,5 +649,9 @@ class BxChooseResponse
             }
         }
         return $values;
+    }
+
+    public function getRedirectLink($language=null, $defaultExtraInfoValue = null, $prettyPrint=false, $choice=null, $considerRelaxation=true, $count=0, $maxDistance=10, $discardIfSubPhrases = true) {
+        return $this->getResponse->getExtraInfoLocalizedValue('redirect_url', $language, $defaultExtraInfoValue, $prettyPrint, $choice, $considerRelaxation, $count, $maxDistance, $discardIfSubPhrases);
     }
 }
